@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:oldstable-slim
 
 LABEL maintainer.original="David Batranu <david.batranu@eaudeweb.ro>"
 LABEL maintainer.current="ipunkt Business Solutions <info@ipunkt.biz>"

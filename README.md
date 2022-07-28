@@ -45,8 +45,16 @@ Set environment variables
 * `MT_MAILBOX_LIMIT` - mailbox limit in bytes, default 51200000
 * `MT_MESSAGE_LIMIT` - message limit in bytes, default 10240000
 * `MT_NETWORK_STYLE` - [host, subnet, or class](http://www.postfix.org/postconf.5.html#mynetworks_style), default subnet
+* `MT_POSTFIX_OPTIONS` - http://www.postfix.org/postconf.5.html, any other options you need.
 
 and recreate the container.
+
+## Running on a centralized server / if you're seeing Relay access denied
+If you're running on a centralized server you need to specify who is allowed to send to the embedded postfix instance option.
+
+To do this you'll need to know the network subnet of the machines that you would allow to send mail to this mailtrap instance.  With the subnet in hand for example "10.10.0.0/16"  add this to the allowed senders by adding the following environment option
+    MT_POSTFIX_OPTIONS = 10.10.0.0/16
+
 
 ## Testing the image locally
 
